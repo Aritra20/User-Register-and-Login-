@@ -117,4 +117,9 @@ console.log("Authentication Successful");
 req.flash("success","you are logged in");
 res.redirect("/");
 });
+router.get("/logout",function(req,res){
+	req.logout();
+	req.flash("success","you have logged out");
+	res.redirect("/users/login");
+});
 module.exports = router;
